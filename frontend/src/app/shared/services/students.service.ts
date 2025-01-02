@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { Student } from 'src/app/model/student';
 
-export interface Student {
-  id: number;
-  name: string;
-  email: string;
-  course: string;
-}
 
 @Injectable({
   providedIn: 'root',
 })
-export class StudentService {
-  private apiUrl = 'http://localhost:3000/students';
 
-  constructor(private http: HttpClient) {}
+export class StudentService {
+  private collectionName = 'students';
+
+
+  constructor(private firestore: AngularFirestore) {}
 
   getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.apiUrl);
+    return this.firestore.collection(this.collectionName).valueChanges({ idField: 'id' });
   }
 
-  addStudent(student: Student): Observable<any> {
-    return this.http.post(this.apiUrl, student);
+  addStudent(student: any): Promise<any> {
+    return this.firestore.collection(this.collectionName).add(student);
   }
+
+  deleteStudent(studentId: string): Promise<void> {
+    return this.firestore.collection(this.collectionName).doc(studentId).delete();
+  }
+
+  updateStudent(student: any): Promise<void> {
+    return this.firestore.collection(this.collectionName).doc(student.id).update(student);
+  }
+
+
 }
