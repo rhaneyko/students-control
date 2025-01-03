@@ -1,34 +1,45 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
-import { Student } from 'src/app/model/student';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { map } from 'rxjs/operators';
+import { Student } from '../../model/student';
+
 
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class StudentService {
-  private collectionName = 'students';
 
+  constructor(private db: AngularFireDatabase) {}
 
-  constructor(private firestore: AngularFirestore) {}
-
-  getStudents(): Observable<Student[]> {
-    return this.firestore.collection(this.collectionName).valueChanges({ idField: 'id' });
-  }
-
-  addStudent(student: any): Promise<any> {
-    return this.firestore.collection(this.collectionName).add(student);
-  }
-
-  deleteStudent(studentId: string): Promise<void> {
-    return this.firestore.collection(this.collectionName).doc(studentId).delete();
-  }
-
-  updateStudent(student: any): Promise<void> {
-    return this.firestore.collection(this.collectionName).doc(student.id).update(student);
+  getStudents(){
+    return this.db.list('students')
+    .snapshotChanges()
+    .pipe(
+      map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+      })
+    );
   }
 
 
+  addStudent(student: Student){
+    this.db.list('students').push(student)
+    .then((result: any) => {
+      console.log(result.key);
+  });
+
+  }
+
+  deleteStudent(key: string){
+    this.db.object(`students/${key}`).remove()
+  }
+
+  updateStudent(student: Student, key: string){
+    this.db.list('students').update(key, student)
+    .catch((error: any) => {
+      console.error(error);
+    });
+  }
 }
