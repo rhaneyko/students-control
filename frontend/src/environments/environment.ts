@@ -4,14 +4,8 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyCsRFzm5EkRcwN5pCXoP7ufOZfYRvZeNHo',
-    authDomain: 'students-control-1ef30.firebaseapp.com',
-    projectId: 'students-control-1ef30',
-    storageBucket: 'students-control-1ef30.firebasestorage.app',
-    messagingSenderId: '993301579259',
-    appId: '1:993301579259:web:2898805886981fd4f6775e',
-    measurementId: 'G-NY39BDFDXT',
+  firebaseConfig: {
+
   },
 };
 
