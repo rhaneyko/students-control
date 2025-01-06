@@ -1,20 +1,16 @@
-<div class="container mt-5 text-center">
-  <div class="input-group mb-5">
-    <input [(ngModel)]="filter" class="form-control" placeholder="Pesquisar aluno">
-  </div>
-  <div class="btn-group m-5 d-flex justify-content-center ">
-    <button routerLink="/add-student" class="btn btn-outline-secondary m-4">Adicionar Estudante</button>
-    <button routerLink="/home" class="btn btn-primary m-4">Voltar</button>
-  </div>
-  <table class="table table-striped mt-5">
-    <tr>
-      <td>#</td>
+<div class="container mt-5 p-5  d-flex flex-column">
+
+  <h1 class="text-center mb-5">Alunos</h1>
+
+  <table class="table-primary">
+    <tr class="fw-bold fs-6" >
+      <td >#</td>
       <td>Nome</td>
       <td>E-mail</td>
       <td>Curso</td>
       <td>Matrícula</td>
     </tr>
-    <tr *ngFor="let stutend of filteredStudents" class="table">
+    <tr *ngFor="let stutend of students" class="">
       <td>{{ stutend.id }}</td>
       <td>{{ stutend.name }}</td>
       <td>{{ stutend.email }}</td>
@@ -22,4 +18,9 @@
       <td>{{ stutend.registration }}</td>
     </tr>
   </table>
+
+  <div class="container mt-5 d-flex justify-content-end">
+    <button routerLink="/add-student" class="btn btn-primary m-2">Adicionar novo aluno</button>
+    <button routerLink="/home" class="btn btn-secondary m-2">Voltar</button>
+  </div>
 </div>

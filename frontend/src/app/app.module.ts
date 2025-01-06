@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './features/home/home.component';
 import { StudentsComponent } from './features/students/students.component';
 import { TeachersComponent } from './features/teachers/teachers.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatToolbarModule} from '@angular/material/toolbar'
-import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
-import { StudentService } from './shared/services/students.service';
 import { AddStudentComponent } from './features/add-student/add-student.component';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { AddStudentComponent } from './features/add-student/add-student.componen
     HomeComponent,
     StudentsComponent,
     TeachersComponent,
-    AddStudentComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { AddStudentComponent } from './features/add-student/add-student.componen
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
