@@ -32,52 +32,43 @@ O **Students Control** é uma aplicação projetada para gerenciar dados de alun
 
 ### 1. Clonar o Repositório
 
-```bash
 git clone https://github.com/rhaneyko/students-control.git
 cd students-control
+
 2. Configurar o Banco de Dados
 Crie um banco de dados MySQL.
 Configure as credenciais de acesso no arquivo .env do back-end (exemplo abaixo):
-env
-Copy code
 DB_HOST=localhost
 DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
 DB_NAME=students_control
+
 3. Instalar Dependências
-Front-End
-bash
-Copy code
+**Front-End**
+
 cd frontend
 npm install
-Back-End
-bash
-Copy code
+
+**Back-End**
+
 cd backend
 npm install
+
 4. Executar o Projeto
-Iniciar o Back-End
-bash
-Copy code
+   
+**Iniciar o Back-End**
+
 cd backend
 npm start
-Iniciar o Front-End
-bash
-Copy code
+
+**Iniciar o Front-End**
+
 cd frontend
 npm start
+
 5. Acessar a Aplicação
 Abra o navegador e acesse: http://localhost:3000
 
-🛡️ Estrutura do Projeto
-Front-End
-src/components: Componentes reutilizáveis
-src/pages: Páginas da aplicação
-src/services: Configuração de comunicação com o back-end
-Back-End
-src/models: Modelos do banco de dados
-src/controllers: Lógica de negócios para rotas
-src/routes: Definição das rotas da API
 🛠️ Contribuindo
 Sinta-se à vontade para contribuir com melhorias ou novas funcionalidades para o projeto. Para começar:
 
@@ -89,7 +80,7 @@ Abra um Pull Request.
 📝 Licença
 Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
-Feito com ❤️ por Rhaneyko
+Feito por Rhaneyko Honorio
 
-csharp
-Copy code
+Linkedin: https://www.linkedin.com/in/rhaneyko-honorio-73657819b/
+
