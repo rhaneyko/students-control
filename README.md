@@ -44,24 +44,24 @@ DB_PASSWORD=sua_senha
 DB_NAME=students_control
 
 ### 3. Instalar Dependências
-**Front-End**
+Front-End
 
 cd frontend
 npm install
 
-**Back-End**
+Back-End
 
 cd backend
 npm install
 
 ### 4. Executar o Projeto
    
-**Iniciar o Back-End**
+Iniciar o Back-End
 
 cd backend
 npm start
 
-**Iniciar o Front-End**
+Iniciar o Front-End
 
 cd frontend
 npm start
