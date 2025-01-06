@@ -1,7 +1,3 @@
-Segue um exemplo de README para o projeto Students Control:
-
-markdown
-Copy code
 # Students Control
 
 Um sistema simples para gerenciar alunos, incluindo cadastro, consulta, atualização e exclusão de informações.
