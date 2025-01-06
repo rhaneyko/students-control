@@ -4,17 +4,17 @@
 
   <form (ngSubmit)="addStudent()">
     <div class="form-floating mb-3">
-      <input [(ngModel)]="name" type="email" class="form-control" placeholder="Digite o nome completo do aluno">
+      <input [(ngModel)]="newStudent.name"  [ngModelOptions]="{standalone: true}" type="email" class="form-control" placeholder="Digite o nome completo do aluno">
       <label>Nome Completo</label>
     </div>
     <br/>
     <div class="form-floating mb-3">
-      <input [(ngModel)]="email" type="email" class="form-control" placeholder="Digite o email do aluno">
+      <input [(ngModel)]="newStudent.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" placeholder="Digite o email do aluno">
       <label>Email</label>
     </div>
     <br/>
     <div class="form-floating mb-3">
-      <input [(ngModel)]="course" type="text" class="form-control" placeholder="Digite o curso do aluno">
+      <input [(ngModel)]="newStudent.course" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Digite o curso do aluno">
       <label>Curso</label>
     </div>
     <br/>
