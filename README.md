@@ -43,7 +43,7 @@ DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
 DB_NAME=students_control
 
-3. Instalar Dependências
+### 3. Instalar Dependências
 **Front-End**
 
 cd frontend
@@ -54,7 +54,7 @@ npm install
 cd backend
 npm install
 
-4. Executar o Projeto
+### 4. Executar o Projeto
    
 **Iniciar o Back-End**
 
@@ -66,7 +66,7 @@ npm start
 cd frontend
 npm start
 
-5. Acessar a Aplicação
+### 5. Acessar a Aplicação
 Abra o navegador e acesse: http://localhost:3000
 
 🛠️ Contribuindo
